@@ -1,8 +1,8 @@
-@import "app/styles/main";
+@import "app/[locale]/styles/main";
 .header{
   position: fixed;
   background-color: $windows-blue;
-  padding: 1rem 7.5rem;
+  padding: .5rem 7.5rem;
   display: flex; justify-content: space-between;
   align-items: center;
   width: 100%;

@@ -12,8 +12,8 @@ body{
   font-family: Windows, sans-serif;
 }
 button{
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  padding: .5rem 1rem;
+  font-size: 1rem;
   cursor: pointer;
   font-family: Windows, sans-serif;
 }
@@ -25,6 +25,7 @@ button{
   font-family: Windows, sans-serif;
   font-size: 1rem;
   font-weight: normal;
+  background: $windows-blue;
   .title-bar-text{
     font-weight: normal;
   }
