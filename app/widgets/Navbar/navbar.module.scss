@@ -1,0 +1,17 @@
+@import "app/styles/main";
+.header{
+  position: fixed;
+  background-color: $windows-blue;
+  padding: 1rem 7.5rem;
+  display: flex; justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+.nav{
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+}
