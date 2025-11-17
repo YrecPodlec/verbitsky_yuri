@@ -1,17 +1,118 @@
 @import "app/[locale]/styles/main";
-.header{
+
+.header {
   position: fixed;
   background-color: $windows-blue;
-  padding: .5rem 7.5rem;
-  display: flex; justify-content: space-between;
+  input[type="checkbox"] + label::before{
+    content: '';
+    display: none;
+  }
+  input[type="checkbox"]:checked + label::after{
+    display: none;
+  }
+  input[type="checkbox"] + label{
+    margin-left: 0;
+    line-height: 0;
+  }
+  @include paddingMain;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   top: 0;
   left: 0;
   box-sizing: border-box;
+  z-index: 1000;
 }
-.nav{
+
+// === ЧЕКБОКС ===
+.burgerInput {
+  display: none; // скрываем
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+// === ИКОНКА ===
+.burgerLabel {
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  @media (max-width: 930px) {
+    display: block;
+  }
+}
+
+.burgerIcon {
+  position: relative;
+  width: 2rem;
+  height: 0.25rem;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+
+  // Полоски
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &::before {
+    top: -0.6rem; // расстояние между полосками
+  }
+
+  &::after {
+    top: 0.6rem;
+  }
+}
+
+// === АНИМАЦИЯ → КРЕСТИК ===
+.burgerInput:checked + .burgerLabel .burgerIcon {
+  background: transparent; // средняя полоска исчезает
+
+  &::before {
+    transform: rotate(45deg);
+    top: 0; // поднимаем на место средней
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+    top: 0; // опускаем на место средней
+  }
+}
+
+// === НАВИГАЦИЯ ===
+.nav {
   display: flex;
   gap: 2rem;
-  padding: 1rem;
+  padding: 1rem 0;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  @media (max-width: 930px) {
+    position: fixed;
+    top: 0;
+    left: -15rem;
+    background-color: $windows-dark;
+    z-index: -100;
+    flex-direction: column;
+    align-items: start;
+    padding: 6rem 2rem;
+    height: 100vh;
+    gap: .5rem;
+  }
+}
+
+// ОТКРЫТОЕ МЕНЮ
+.burgerInput:checked ~ .nav {
+  @media (max-width: 930px) {
+    left: 0;
+  }
 }

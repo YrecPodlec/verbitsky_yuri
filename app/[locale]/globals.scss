@@ -1,8 +1,5 @@
 @import "styles/main";
 @import "98.css";
-*{
-
-}
 body{
   margin: 0;
   padding: 0;
@@ -10,12 +7,17 @@ body{
 }
 *{
   font-family: Windows, sans-serif;
+  transition: all .3s ease-in-out;
 }
 button{
   padding: .5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
   font-family: Windows, sans-serif;
+  @media(max-width: 600px) {
+    padding: .5rem .5rem;
+    font-size: .7rem;
+  }
 }
 .title-bar{
   border-left: 4px solid #C0C0C0;    // базовая светлая рамка
@@ -40,6 +42,9 @@ button{
           1px  1px 0px 0px #808080 inset,
           -2px -2px 0px 0px #C1C1C1 inset,
           2px  2px 0px 0px black inset;
+  @media(max-width: 600px) {
+    border: 1px solid #C0C0C0;
+  }
 }
 .window{
   box-shadow:

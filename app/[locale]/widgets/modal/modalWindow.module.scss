@@ -1,0 +1,19 @@
+.windowMain{
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 4rem;
+  background-color: rgba(16, 16, 16, 0.7);
+}
+.windowContentMain{
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+.windowsBodyContent{
+  flex: 1;
+  padding: .5rem;
+}

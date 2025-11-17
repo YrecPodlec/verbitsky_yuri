@@ -1,0 +1,18 @@
+.select{
+  cursor: pointer;
+  background-color: white;
+  p{
+    margin: 0;
+  }
+  display: flex;
+  gap: .5rem;
+}
+.ico{
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  @media (max-width: 600px) {
+    width: .7rem;
+    height: .7rem;
+  }
+}
