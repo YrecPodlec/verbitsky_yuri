@@ -3,7 +3,7 @@ import styles from './navbar.module.scss'
 import Link from "next/link";
 import {Language, Logo} from "@/app/[locale]/shared";
 import {useTranslations} from "next-intl";
-import {ModalWindow} from "@/app/[locale]/widgets";
+import {Languages, ModalWindow} from "@/app/[locale]/widgets";
 const Navbar = () => {
     const translateBtns = useTranslations('navbar')
     return (
@@ -23,7 +23,7 @@ const Navbar = () => {
                 <Link href={''}><button>{translateBtns('contacts')}</button></Link>
             </nav>
             <ModalWindow btn={<Language/>} content={
-                <p>TEXT</p>
+                <Languages/>
             }/>
         </header>
     );

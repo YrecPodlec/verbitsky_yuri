@@ -19,7 +19,36 @@ button{
     font-size: .7rem;
   }
 }
-.title-bar{
+h1{
+  font-size: 4rem;
+  margin: 0;
+  @media (max-width: 1025px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 780px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 640px) {
+    font-size: 1rem;
+  }
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.title-bar-text{
+  letter-spacing: .125rem;
+  @media(max-width: 640px) {
+    font-size: .7rem;
+    font-weight: normal;
+  }
+}
+.title-bar-controls{
+  @media(max-width: 640px) {
+    scale: .8;
+  }
+}
+.title-bar-white{
   border-left: 4px solid #C0C0C0;    // базовая светлая рамка
   border-right: 4px solid #C0C0C0;    // базовая светлая рамка
   border-top: 0 solid #C0C0C0;    // базовая светлая рамка
@@ -32,7 +61,7 @@ button{
     font-weight: normal;
   }
 }
-.window-body {
+.window-body-white {
   margin: 0;
   background-color: white;
   border: 4px solid #C0C0C0;    // базовая светлая рамка
@@ -46,7 +75,7 @@ button{
     border: 1px solid #C0C0C0;
   }
 }
-.window{
+.window-white{
   box-shadow:
           1px 1px 0 0 white inset,
           -2px  -2px 0px 0px #7F7F7F inset,

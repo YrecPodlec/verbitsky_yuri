@@ -7,8 +7,13 @@
   left: 0;
   padding: 4rem;
   background-color: rgba(16, 16, 16, 0.7);
+  @media (max-width: 640px) {
+    padding: 1rem;
+    align-content: center;
+  }
 }
 .windowContentMain{
+  overflow: hidden;
   height: 85vh;
   display: flex;
   flex-direction: column;
@@ -16,4 +21,5 @@
 .windowsBodyContent{
   flex: 1;
   padding: .5rem;
+  overflow-y: scroll;
 }

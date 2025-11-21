@@ -3,6 +3,23 @@
     "about": "ABOUT ME",
     "projects": "PROJECTS",
     "skills": "SKILLS",
-    "contacts": "CONTACTS"
+    "contacts": "CONTACTS",
+    "more": "MORE INFO"
+  },
+  "welcome": {
+    "projects": "Real Projects",
+    "experience": "Years experience",
+    "libs": "Libraries",
+    "frameworks": "Frameworks",
+    "windowBody": "I craft clean and modern web apps that make ideas come alive",
+    "name": "Yuri Verbitsky",
+    "media": "Find me in social media, click the links below"
+  },
+  "fastLine": {
+    "design": "DESIGN",
+    "wdev": "WEB DEVELOPING",
+    "prog": "PROGRAMMING",
+    "ai": "AI",
+    "fuls": "FULLSTACK"
   }
 }

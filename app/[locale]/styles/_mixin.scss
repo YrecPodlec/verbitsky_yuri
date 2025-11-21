@@ -7,3 +7,82 @@
     padding: .5rem 1rem;
   }
 }
+
+/* ---------- FLEX ---------- */
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- MEDIA FONT SIZES ---------- */
+
+@mixin font-responsive($desktop, $tablet, $mobile, $height-small: null) {
+  font-size: $desktop;
+
+  @media (max-width: 1025px) {
+    font-size: $tablet;
+  }
+  @media (max-width: 640px) {
+    font-size: $mobile;
+  }
+  @if $height-small != null {
+    @media (max-height: 900px) {
+      font-size: $height-small;
+    }
+  }
+}
+
+/* ---------- GRID ---------- */
+
+@mixin grid-2-responsive($gap-desktop, $gap-mobile) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $gap-desktop;
+
+  @media (max-width: 1025px) {
+    grid-template-columns: 1fr;
+    gap: $gap-mobile;
+  }
+}
+
+/* ---------- IMAGE SIZES ---------- */
+
+@mixin img-square($size-desktop, $size-mobile) {
+  width: $size-desktop;
+  aspect-ratio: 1 / 1;
+
+  @media (max-width: 640px) {
+    width: $size-mobile;
+  }
+}
+
+/* ---------- WRAPPING ---------- */
+
+@mixin wrap-center-gap($gap) {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $gap;
+}
+
+/* ---------- BUTTON TEXT ---------- */
+
+@mixin btn-text-responsive {
+  @include font-responsive(1.5rem, 1rem, .7rem, .7rem);
+  font-weight: normal;
+  display: inline-block;
+}

@@ -1,0 +1,9 @@
+.windowTitle{
+  width: fit-content;
+}
+.h1{
+  padding: .5rem 4rem;
+  @media(max-width: 780px){
+    padding: .125rem 1rem;
+  }
+}

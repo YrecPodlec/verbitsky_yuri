@@ -13,7 +13,7 @@ const ModalWindow = ({btn, content}: Window) => {
                 {btn}
             </div>
             <div className={styles.windowMain} onClick={() => setIsOpen(false)}
-            style={isOpen ? {opacity: 1, zIndex: 999} : {opacity: 0, zIndex: -999}}
+            style={isOpen ? {opacity: 1, zIndex: 999, top: 0} : {opacity: 0, zIndex: -999, top: "-150vh"}}
             >
                 <div className={`${styles.windowContentMain} window`}
                 onClick={(event) => event.stopPropagation()}
