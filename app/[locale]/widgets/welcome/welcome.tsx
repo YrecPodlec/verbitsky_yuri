@@ -3,6 +3,7 @@ import styles from './welcome.module.scss'
 import Image from "next/image";
 import Link from "next/link";
 import {useTranslations} from "next-intl";
+import {Background} from "@/app/[locale]/shared";
 interface Props {
     content: string
 }
@@ -19,7 +20,7 @@ const Welcome = () => {
     const line = useTranslations('fastLine')
     return (
         <section className={styles.wrapper}>
-
+            <Background img={"/back.png"} />
             {/* HERO (с паддингами) */}
             <section className={styles.section}>
                 <div className={styles.content}>

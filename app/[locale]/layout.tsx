@@ -7,6 +7,7 @@ import {notFound} from "next/navigation";
 import {NextIntlClientProvider} from "next-intl";
 import React from "react";
 import {Background} from "@/app/[locale]/shared";
+import Image from "next/image";
 export const metadata: Metadata = {
   title: "Yuri Verbitsky | WEB DEVELOPER",
   description: "Yuri's Verbitsky Web-App",
@@ -35,7 +36,7 @@ export default async function RootLayout({
             <Navbar />
             {children}
         </NextIntlClientProvider>
-        <Background/>
+        <Background img={"/back.png"} />
         </body>
         </html>
     );

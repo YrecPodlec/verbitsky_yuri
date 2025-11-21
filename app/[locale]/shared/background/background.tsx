@@ -1,10 +1,13 @@
 import React from 'react';
 import Image from "next/image";
 import styles from './back.module.scss'
-const Background = () => {
+interface IProps {
+    img: string;
+}
+const Background = ({img}: IProps) => {
     return (
         <div className={styles.back}>
-            <Image src={'/back.png'} alt={'background'} fill/>
+            <Image src={img} alt={'background'} fill/>
         </div>
     );
 };
