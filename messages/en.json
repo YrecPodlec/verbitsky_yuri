@@ -21,5 +21,7 @@
     "prog": "PROGRAMMING",
     "ai": "AI",
     "fuls": "FULLSTACK"
-  }
+  },
+  "aboutText": {
+    "first": "Four years ago, I tried my hand at web development for the first time at university. Honestly, at that time I thought I would go to game dev, but the code for websites suddenly tightened", "second": "Since then, I've been expanding my horizons: from the first simple pages,\n I've moved on to a full-fledged workbench, trying different technologies and approaches to\n creating interfaces.", "third": "I'm currently studying at my second university, testing new techniques and frameworks, \n and constantly looking for fresh ways to make the web faster, more convenient, and more beautiful"}
 }
