@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import {Navbar} from "@/app/[locale]/widgets";
+import {Footer, Navbar} from "@/app/[locale]/widgets";
 import {routing} from "@/i18n/routing";
 import {hasLocale} from "use-intl";
 import {notFound} from "next/navigation";
 import {NextIntlClientProvider} from "next-intl";
 import React from "react";
 import {Background} from "@/app/[locale]/shared";
-import Image from "next/image";
+import {Win98Preloader} from "@/app/[locale]/features";
 export const metadata: Metadata = {
   title: "Yuri Verbitsky | WEB DEVELOPER",
   description: "Yuri's Verbitsky Web-App",
@@ -34,7 +34,9 @@ export default async function RootLayout({
         <body>
         <NextIntlClientProvider>
             <Navbar />
+            <Win98Preloader />
             {children}
+            <Footer/>
         </NextIntlClientProvider>
         <Background img={"/back.png"} />
         </body>

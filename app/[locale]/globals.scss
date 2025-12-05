@@ -8,6 +8,15 @@ body{
 *{
   font-family: Windows, sans-serif;
   transition: all .3s ease-in-out;
+  scroll-behavior: smooth;
+  scroll-margin-top: 120px;
+}
+input, textarea{
+  font-family: Windows, sans-serif;
+  resize: none;
+}
+textarea{
+  height: 12rem;
 }
 button{
   padding: .5rem 1rem;
@@ -76,9 +85,19 @@ a{
   }
 }
 .window-white{
+  color: black;
   box-shadow:
           1px 1px 0 0 white inset,
           -2px  -2px 0px 0px #7F7F7F inset,
           2px 2px 0px 0px #DFDFDF inset,
           1px  1px 0px 0px black;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  overflow: hidden;
+  @media(max-width: 640px) {
+    gap: 2rem;
+  }
 }

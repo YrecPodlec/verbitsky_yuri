@@ -1,0 +1,15 @@
+.windowTitle{
+    width: fit-content;
+    background-color: #C1C1C1;
+    box-shadow:
+    4px 2px 0px 0px #000080,
+    8px 4px 0px 0px rgb(255, 0, 102),
+    12px 6px 0px 0px #000080;
+}
+.h1{
+    padding: .5rem 4rem;
+    font-size: 2rem;
+    @media(max-width: 780px){
+        padding: .125rem 1rem;
+    }
+}

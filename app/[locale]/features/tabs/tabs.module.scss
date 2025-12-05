@@ -1,0 +1,9 @@
+@import "app/[locale]/styles/main";
+.active{
+  background-color: $addon-blue;
+}
+.section{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

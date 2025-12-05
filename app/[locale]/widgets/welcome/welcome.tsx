@@ -1,30 +1,65 @@
+// app/[locale]/welcome/Welcome.tsx
+"use client";
+
 import React from 'react';
-import styles from './welcome.module.scss'
+import styles from './welcome.module.scss';
 import Image from "next/image";
 import Link from "next/link";
-import {useTranslations} from "next-intl";
-import {Background} from "@/app/[locale]/shared";
-interface Props {
-    content: string
-}
-const Circle = ({content}: Props) => {
+import { useTranslations } from "next-intl";
+import { Background } from "@/app/[locale]/shared";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+
+const Circle = ({ content }: { content: string }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+
     return (
-        <div className={styles.circle}>
+        <motion.div
+            ref={ref}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={isInView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.7, ease: "backOut" }}
+            className={styles.circle}
+        >
             {content}
-        </div>
-    )
-}
+        </motion.div>
+    );
+};
+
 const Welcome = () => {
-    const t = useTranslations('welcome')
-    const btn = useTranslations('navbar')
-    const line = useTranslations('fastLine')
+    const t = useTranslations('welcome');
+    const btn = useTranslations('navbar');
+    const line = useTranslations('fastLine');
+
+    // Рефы для анимации при скролле
+    const photoRef = useRef(null);
+    const leftBtnsRef = useRef(null);
+    const rightBtnsRef = useRef(null);
+    const windowRef = useRef(null);
+    const linksRef = useRef(null);
+
+    const isPhotoInView = useInView(photoRef, { once: true, margin: "-150px" });
+    const isLeftInView = useInView(leftBtnsRef, { once: true });
+    const isRightInView = useInView(rightBtnsRef, { once: true });
+    const isWindowInView = useInView(windowRef, { once: false });
+    const isLinksInView = useInView(linksRef, { once: false });
+
     return (
         <section className={styles.wrapper}>
             <Background img={"/back.png"} />
-            {/* HERO (с паддингами) */}
+
             <section className={styles.section}>
                 <div className={styles.content}>
-                    <div className={styles.btnsWithText}>
+
+                    <motion.div
+                        ref={leftBtnsRef}
+                        initial={{ x: -200, opacity: 0 }}
+                        animate={isLeftInView ? { x: 0, opacity: 1 } : {}}
+                        transition={{ duration: 0.8, delay: 0.9 }}
+                        className={styles.btnsWithText}
+                    >
                         <div className={styles.blockBtns}>
                             <div className={styles.boxOfBtns}>
                                 <Circle content={'4'} />
@@ -35,22 +70,38 @@ const Welcome = () => {
                                 <span>{t('experience')}</span>
                             </div>
                         </div>
-                        <Link href={''}>
-                            <button>
+                        <Link href={'#contacts'}>
+                            <motion.button
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
                                 {btn('contacts')}
-                            </button>
+                            </motion.button>
                         </Link>
-                    </div>
+                    </motion.div>
 
-                    <div className={styles.photo}>
+                    <motion.div
+                        ref={photoRef}
+                        initial={{opacity: 0}}
+                        animate={isPhotoInView ? {opacity: 1} : {}}
+                        transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
+                        className={styles.photo}
+                    >
                         <Image
                             src={'/welcome.png'}
                             alt={'Yuri Verbitsky'}
                             fill
+                            priority
                         />
-                    </div>
+                    </motion.div>
 
-                    <div className={styles.btnsWithText}>
+                    <motion.div
+                        ref={rightBtnsRef}
+                        initial={{ x: 200, opacity: 0 }}
+                        animate={isRightInView ? { x: 0, opacity: 1 } : {}}
+                        transition={{ duration: 0.8, delay: 0.9 }}
+                        className={styles.btnsWithText}
+                    >
                         <div className={styles.blockBtns}>
                             <div className={styles.boxOfBtns}>
                                 <Circle content={'9+'} />
@@ -61,16 +112,18 @@ const Welcome = () => {
                                 <span>{t('frameworks')}</span>
                             </div>
                         </div>
-                        <Link href={''}>
-                            <button>
+                        <Link href={'#info'}>
+                            <motion.button
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
                                 {btn('more')}
-                            </button>
+                            </motion.button>
                         </Link>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
-            {/* SLIDER — БЕЗ паддингов, на всю ширину */}
             <section className={styles.sliderText}>
                 <div className={styles.marquee}>
                     <div className={styles.marqueeContent}>
@@ -80,7 +133,6 @@ const Welcome = () => {
                         <h1>{line('ai')}</h1>
                         <h1>{line('fuls')}</h1>
                     </div>
-                    {/* Дубликат для бесконечной прокрутки */}
                     <div className={styles.marqueeContent}>
                         <h1>{line('design')}</h1>
                         <h1>{line('wdev')}</h1>
@@ -90,16 +142,17 @@ const Welcome = () => {
                     </div>
                 </div>
             </section>
-
-
-
-            {/* CONTACTS (с паддингами снова) */}
-            <section className={styles.section}>
+            <section className={styles.section} id={'info'}>
                 <div className={styles.contacts}>
-                    <div className={`${styles.contentWindow} window window-white`}>
+                    <motion.div
+                        ref={windowRef}
+                        initial={{ scale: 0.5, opacity: 0, x: -400 }}
+                        animate={isWindowInView ? { scale: 1, opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.5, ease: "backOut",}}
+                        className={`${styles.contentWindow} window window-white`}
+                    >
                         <div className="title-bar title-bar-white">
                             <div className="title-bar-text">Yuri Verbitsky Portfolio web app</div>
-
                             <div className="title-bar-controls">
                                 <button aria-label="Minimize"></button>
                                 <button aria-label="Maximize"></button>
@@ -107,24 +160,20 @@ const Welcome = () => {
                             </div>
                         </div>
                         <div className={`${styles.bodyWindow} window-body window-body-white`}>
-                            <p>
-                                {t('windowBody')}
-                            </p>
+                            <p>{t('windowBody')}</p>
                             <p>FULLSTACK WEB DEVELOPER</p>
                             <h1>{t('name')}</h1>
                             <div className={styles.boxItems}>
-                                <div className={styles.boxItemIco}>
-                                    <Image src={'/ico/next.svg'} alt={''} fill/>
-                                </div>
-                                <div className={styles.boxItemIco}>
-                                    <Image src={'/ico/nest.svg'} alt={''} fill/>
-                                </div>
-                                <div className={styles.boxItemIco}>
-                                    <Image src={'/ico/react.svg'} alt={''} fill/>
-                                </div>
-                                <div className={styles.boxItemIco}>
-                                    <Image src={'/ico/ts.svg'} alt={''} fill/>
-                                </div>
+                                {['next', 'nest', 'react', 'ts'].map((icon) => (
+                                    <motion.div
+                                        key={icon}
+                                        whileHover={{ scale: 1.2, rotate: 360 }}
+                                        transition={{ duration: 0.5 }}
+                                        className={styles.boxItemIco}
+                                    >
+                                        <Image src={`/ico/${icon}.svg`} alt={icon} fill />
+                                    </motion.div>
+                                ))}
                             </div>
                         </div>
                         <div className="status-bar">
@@ -132,39 +181,33 @@ const Welcome = () => {
                             <p className="status-bar-field">Slide 1</p>
                             <p className="status-bar-field">CPU Usage: 14%</p>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className={styles.links}>
+                    <motion.div
+                        ref={linksRef}
+                        initial={{ x: 400, opacity: 0 }}
+                        animate={isLinksInView ? { x: 0, opacity: 1 } : {}}
+                        transition={{ duration: 0.5 }}
+                        className={styles.links}
+                    >
                         <h1>{t('media')}</h1>
                         <div className={styles.linksList}>
-                            <Link href={''}>
-                                <button>
-                                    <div className={styles.mediaBtn}>
-                                        <Image src={'/telegram.svg'} alt={''} fill/>
-                                    </div>
-                                </button>
-                            </Link>
-
-                            <Link href={''}>
-                                <button>
-                                    <div className={styles.mediaBtn}>
-                                        <Image src={'/whatsapp.svg'} alt={''} fill/>
-                                    </div>
-                                </button>
-                            </Link>
-
-                            <Link href={''}>
-                                <button>
-                                    <div className={styles.mediaBtn}>
-                                        <Image src={'/mail.svg'} alt={''} fill/>
-                                    </div>
-                                </button>
-                            </Link>
+                            {['telegram', 'whatsapp', 'mail'].map((social) => (
+                                <Link href={''} key={social}>
+                                    <motion.button
+                                        whileHover={{ scale: 1.15, boxShadow: "0 0 20px rgba(0,255,255,0.6)" }}
+                                        whileTap={{ scale: 0.9 }}
+                                    >
+                                        <div className={styles.mediaBtn}>
+                                            <Image src={`/${social}.svg`} alt={social} fill />
+                                        </div>
+                                    </motion.button>
+                                </Link>
+                            ))}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
-
         </section>
     );
 };

@@ -1,0 +1,15 @@
+.custom-window {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow:
+            8px 8px 0px 0px rgba(0, 136, 255, 1),
+            16px 16px 0px 0px rgb(0, 255, 255);
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.custom-window-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

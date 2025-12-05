@@ -9,18 +9,16 @@ const Navbar = () => {
     return (
         <header className={styles.header}>
             <Logo/>
-            {/* Чекбокс — скрыт, но с id */}
             <input type="checkbox" id="nav-toggle" className={styles.burgerInput} />
 
-            {/* Кликабельная иконка */}
             <label htmlFor="nav-toggle" className={styles.burgerLabel}>
                 <span className={styles.burgerIcon}></span>
             </label>
             <nav className={styles.nav}>
-                <Link href={''}><button>{translateBtns('about')}</button></Link>
-                <Link href={''}><button>{translateBtns('projects')}</button></Link>
-                <Link href={''}><button>{translateBtns('skills')}</button></Link>
-                <Link href={''}><button>{translateBtns('contacts')}</button></Link>
+                <Link href={'#about'}><button>{translateBtns('about')}</button></Link>
+                <Link href={'#projects'}><button>{translateBtns('projects')}</button></Link>
+                <Link href={'#skills'}><button>{translateBtns('skills')}</button></Link>
+                <Link href={'#contacts'}><button>{translateBtns('contacts')}</button></Link>
             </nav>
             <ModalWindow btn={<Language/>} content={
                 <Languages/>

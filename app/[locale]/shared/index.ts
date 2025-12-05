@@ -4,9 +4,13 @@ import {data} from "@/app/[locale]/shared/data/languages";
 import Flag from "@/app/[locale]/shared/UI/flag/flag";
 import Background from "@/app/[locale]/shared/background/background";
 import Title from "@/app/[locale]/shared/UI/title/title";
+import ImageWelcome from "@/app/[locale]/shared/Image/image";
+import Window from "@/app/[locale]/shared/UI/window/window";
 export {Logo as Logo}
 export {Language as Language}
 export {data as dataLanguage}
 export {Flag as Flag}
 export {Background as Background}
 export {Title as Title}
+export {ImageWelcome as ImageWelcome}
+export {Window as Window}

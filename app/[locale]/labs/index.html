@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Verbitsky Portfolio</title>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/98.css"
+    >
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="logo.css" />
+    <link rel="stylesheet" href="welcome.css" />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="title.css" />
+    <link rel="stylesheet" href="window.css" />
+    <link rel="stylesheet" href="projects.css" />
+    <link rel="stylesheet" href="skills.css" />
+    <link rel="stylesheet" href="contacts.css" />
+    <link rel="stylesheet" href="footer.css" />
+
+    <style>
+        :root {
+            --win-blue: #0000a0;
+            --win-lightblue: #0080ff;
+            --win-gray: #c0c0c0;
+            --win-dark: #808080;
+        }
+        /* === ПРЕЛОАДЕР WINDOWS 98 === */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #000080;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+        #win-logo {
+            width: 120px;
+            height: 120px;
+            background: url('https://win98icons.alexmeub.com/icons/png/windows-0.png') center/contain no-repeat;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+        #progress-container {
+            width: 300px;
+            height: 20px;
+            background: black;
+            border: 2px solid white;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        #progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #00ff00, #00c800);
+            box-shadow: 0 0 10px #00ff00;
+            transition: width 0.4s ease;
+        }
+        #loading-text {
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Эффект "открытия окна" */
+        .window-hover {
+            transition: all 0.3s ease;
+            transform: scale(1);
+        }
+    </style>
+
+</head>
+<body>
+<div class="background">
+    <img src="../../../public/back.png" alt="Фон" class="background__img">
+</div>
+<!-- ПРЕЛОАДЕР WINDOWS 98 -->
+<div id="preloader">
+    <div id="win-logo"></div>
+    <div id="loading-text">Microsoft Windows 98<br>Starting up...</div>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    <p>© Yuri Verbitsky 2025</p>
+</div>
+<!-- НАВБАР -->
+<header class="header">
+    <!-- Логотип -->
+    <div class="logo">
+        <div class="window window-white">
+            <div class="window-body window-body-white">
+                <p>Verbitsky</p>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="nav-toggle" class="burger-input" style="opacity: 0;"/>
+    <label for="nav-toggle" class="burger-label">
+        <span class="burger-icon"></span>
+    </label>
+
+    <nav class="nav">
+        <a href="#about"><button>ABOUT ME</button></a>
+        <a href="#projects"><button>PROJECTS</button></a>
+        <a href="#skills"><button>SKILLS</button></a>
+        <a href="#contacts"><button>CONTACTS</button></a>
+    </nav>
+
+    <div class="language-selector">
+        <button id="open-lang-modal" class="language-btn">Language</button>
+
+        <div id="lang-modal" class="modal-overlay">
+            <div class="window modal-window">
+                <div class="title-bar">
+                    <div class="title-bar-text">Select Language</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" id="close-modal"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <button class="lang-option" data-lang="en">English</button>
+                    <button class="lang-option" data-lang="ru">Русский</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="welcome-wrapper fade-in">
+
+        <div class="welcome-section">
+            <div class="welcome-content">
+
+                <div class="welcome-btns">
+                    <div class="welcome-block">
+                        <div class="welcome-circle">4</div>
+                        <span>Projects</span>
+                    </div>
+                    <div class="welcome-block">
+                        <div class="welcome-circle">3+</div>
+                        <span>Experience</span>
+                    </div>
+                    <a href="#contacts"><button>Contacts</button></a>
+                </div>
+
+                <div class="welcome-photo">
+                    <img src="../../../public/welcome.png" alt="Yuri Verbitsky"/>
+                </div>
+                <div class="welcome-btns">
+                    <div class="welcome-block">
+                        <div class="welcome-circle">9+</div>
+                        <span>Libraries</span>
+                    </div>
+                    <div class="welcome-block">
+                        <div class="welcome-circle">2</div>
+                        <span>Frameworks</span>
+                    </div>
+                    <a href="#info"><button>More</button></a>
+                </div>
+
+            </div>
+        </div>
+
+        <section class="welcome-slider" id="info">
+            <div class="marquee">
+                <div class="marquee-content">
+                    <h1>Design</h1>
+                    <h1>WebDev</h1>
+                    <h1>Programming</h1>
+                    <h1>AI</h1>
+                    <h1>Fullstack</h1>
+                </div>
+
+                <div class="marquee-content">
+                    <h1>Design</h1>
+                    <h1>WebDev</h1>
+                    <h1>Programming</h1>
+                    <h1>AI</h1>
+                    <h1>Fullstack</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <div class="contacts">
+                <div class="contentWindow window window-white">
+                    <div class="title-bar title-bar-white">
+                        <div class="title-bar-text">Yuri Verbitsky Portfolio web app</div>
+
+                        <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                        </div>
+                    </div>
+
+                    <div class="bodyWindow window-body window-body-white">
+                        <p>I craft clean and modern web apps that make ideas come alive</p>
+                        <p>FULLSTACK WEB DEVELOPER</p>
+                        <h1>Yuri Verbitsky</h1>
+
+                        <div class="boxItems">
+                            <div class="boxItemIco">
+                                <img src="../../../public/ico/next.svg" alt="">
+                            </div>
+                            <div class="boxItemIco">
+                                <img src="../../../public/ico/nest.svg" alt="">
+                            </div>
+                            <div class="boxItemIco">
+                                <img src="../../../public/ico/react.svg" alt="">
+                            </div>
+                            <div class="boxItemIco">
+                                <img src="../../../public/ico/ts.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-bar">
+                        <p class="status-bar-field">Press F1 for help</p>
+                        <p class="status-bar-field">Slide 1</p>
+                        <p class="status-bar-field">CPU Usage: 14%</p>
+                    </div>
+                </div>
+
+                <div class="links">
+                    <h1>Find me in social media, click the links below</h1>
+                    <div class="linksList">
+                        <a href="">
+                            <button>
+                                <div class="mediaBtn">
+                                    <img src="../../../public/telegram.svg" alt="">
+                                </div>
+                            </button>
+                        </a>
+
+                        <a href="">
+                            <button>
+                                <div class="mediaBtn">
+                                    <img src="../../../public/whatsapp.svg" alt="">
+                                </div>
+                            </button>
+                        </a>
+
+                        <a href="">
+                            <button>
+                                <div class="mediaBtn">
+                                    <img src="../../../public/mail.svg" alt="">
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="section2 fade-in" id="about">
+        <div class="box">
+            <div class="windowTitle">
+                <div class="title-bar">
+                    <div class="title-bar-text">TITLE</div>
+                </div>
+
+                <div class="titleH1 window-body">
+                    <h1>ABOUT ME</h1>
+                </div>
+            </div>
+
+
+            <div class="content">
+                <p>
+                    Four years ago, I tried my hand at web development for the first time at university. Honestly, at that time I thought I would go to game dev, but the code for websites suddenly tightened<br><br><br>
+                    Since then, I've been expanding my horizons: from the first simple pages, I've moved on to a full-fledged workbench, trying different technologies and approaches to creating interfaces.
+                </p>
+
+                <span>
+                I'm currently studying at my second university, testing new techniques and frameworks, and constantly looking for fresh ways to make the web faster, more convenient, and more beautiful
+            </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-block fade-in" id="projects">
+        <div class="windowTitle">
+            <div class="title-bar">
+                <div class="title-bar-text">TITLE</div>
+            </div>
+
+            <div class="titleH1 window-body">
+                <h1>PROJECTS</h1>
+            </div>
+        </div>
+        <p class="projects-subtitle">Click the Project you prefer and see more Information</p>
+
+        <!-- Контейнер для проектов -->
+        <div id="projects-container" class="projects-grid fade-in"></div>
+
+        <!-- Пагинация -->
+        <div class="projects-pagination">
+            <button class="prev-page">◄</button>
+            <div class="page-buttons"></div>
+            <button class="next-page">►</button>
+        </div>
+    </section>
+
+    <div class="justText fade-in">
+        For me, every project is not just a set of code, but a story about how an idea turns into a working product. I try to have logic behind the interfaces, and user—friendliness behind the logic.
+    </div>
+
+    <section class="skills-section fade-in" id="skills">
+
+        <!-- Title -->
+        <div class="windowTitle">
+            <div class="title-bar">
+                <div class="title-bar-text">TITLE</div>
+            </div>
+
+            <div class="titleH1 window-body">
+                <h1>SKILLS</h1>
+            </div>
+        </div>
+
+        <!-- Tabs Buttons -->
+        <div class="tabs-btns fade-in" id="tabsBtns"></div>
+
+        <!-- Tab Content -->
+        <div class="tabs-content fade-in" id="tabsContent"></div>
+
+    </section>
+
+    <section class="contacts-section fade-in" id="contacts">
+        <section class="contact-section">
+            <!-- Title -->
+            <div class="windowTitle">
+                <div class="title-bar">
+                    <div class="title-bar-text">TITLE</div>
+                </div>
+
+                <div class="titleH1 window-body">
+                    <h1>CONTACTS</h1>
+                </div>
+            </div>
+
+            <div class="content2 fade-in">
+
+                <!-- Форма -->
+                <form class="blockInputs" id="contactForm" novalidate>
+                    <div class="inputBox field-row-stacked" id="nameBox">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" />
+                        <span class="errorText" id="nameError"></span>
+                    </div>
+
+                    <div class="inputBox field-row-stacked" id="emailBox">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" />
+                        <span class="errorText" id="emailError"></span>
+                    </div>
+
+                    <div class="inputBox field-row-stacked" id="messageBox">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5"></textarea>
+                        <span class="errorText" id="messageError"></span>
+                    </div>
+
+                    <div class="btn">
+                        <button type="submit">SEND</button>
+                    </div>
+                </form>
+
+                <div class="blockText">
+                    <p>Fill out the form, or...</p>
+                    <p>Find me in social media, click the links below</p>
+
+                    <div class="linksList">
+                        <a href="https://t.me/yourusername" target="_blank">
+                            <button><div class="mediaBtn"><img src="../../../public/telegram.svg" alt="Telegram"></div></button>
+                        </a>
+                        <a href="https://wa.me/79999435877" target="_blank">
+                            <button><div class="mediaBtn"><img src="../../../public/whatsapp.svg" alt="WhatsApp"></div></button>
+                        </a>
+                        <a href="mailto:VerbYuri@gmail.com">
+                            <button><div class="mediaBtn"><img src="../../../public/mail.svg" alt="Email"></div></button>
+                        </a>
+                    </div>
+
+                    <div class="links">
+                        <a href="mailto:VerbYuri@gmail.com">VerbYuri@gmail.com</a>
+                        <a href="tel:+79999435877">+7 999 943-58-77</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+</main>
+
+<footer class="footerYV">
+    <div class="footerYV__content">
+        <div class="footerYV__blockText">
+
+            <div class="footerYV__yuri">
+                Yuri Verbitsky 2025
+            </div>
+            <div class="footerYV__logo">
+                <div class="logo">
+                    <div class="window window-white">
+                        <div class="window-body window-body-white">
+                            <p>Verbitsky</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerYV__down">
+
+                <div class="footerYV__info">
+                    <p>Developer: Yuri Verbitsky</p>
+                    <p>Design: Yuri Verbitsky</p>
+                </div>
+
+                <div class="footerYV__nav">
+                    <a href="#about"><button>About</button></a>
+                    <a href="#projects"><button>Projects</button></a>
+                    <a href="#skills"><button>Skills</button></a>
+                    <a href="#contacts"><button>Contacts</button></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('open-lang-modal');
+        const closeBtn = document.getElementById('close-modal');
+        const modal = document.getElementById('lang-modal');
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Закрытие по клику вне окна
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Смена языка (пока просто консоль)
+        document.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                console.log('Выбран язык:', btn.dataset.lang);
+                modal.classList.remove('active');
+            });
+        });
+    });
+</script>
+<script src="js/projects.js"></script>
+<script src="js/skills.js"></script>
+<script src="js/contacts.js"></script>
+
+<script>
+    // === ПРЕЛОАДЕР ===
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        const progress = document.getElementById('progress-bar');
+        const content = document.getElementById('content');
+
+        let width = 0;
+        const interval = setInterval(() => {
+            if (width >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    preloader.style.opacity = '0';
+                    preloader.style.transition = 'opacity 1s';
+                    setTimeout(() => {
+                        preloader.remove();
+                        content.style.display = 'block';
+                        // Запуск анимаций появления
+                        document.querySelectorAll('.fade-in').forEach((el, i) => {
+                            setTimeout(() => el.classList.add('visible'), i * 200);
+                        });
+                        // Анимация прогресс-баров
+                        document.querySelectorAll('.skill-fill').forEach(bar => {
+                            setTimeout(() => {
+                                bar.style.width = bar.textContent.split('–')[1].trim();
+                            }, 1000);
+                        });
+                    }, 1000);
+                }, 500);
+            } else {
+                width += 2;
+                progress.style.width = width + '%';
+            }
+        }, 40);
+    });
+
+    // Скролл-анимации
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

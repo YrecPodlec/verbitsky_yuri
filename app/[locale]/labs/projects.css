@@ -1,0 +1,77 @@
+/* ---------- Projects Section ---------- */
+.projects-block {
+    padding: 8rem 7.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1025px) {
+    .projects-block {
+        padding: 4rem 2rem;
+        gap: 1rem;
+    }
+}
+
+.projects-subtitle {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .projects-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* ---------- Grid of Projects ---------- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    gap: 4rem;
+}
+
+@media (max-width: 640px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Images inside Window ---------- */
+.projects-grid img {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+}
+
+/* ---------- Pagination ---------- */
+.projects-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+
+.projects-pagination button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.justText{
+    background-color: #000080;
+    padding: 2rem 7.5rem;
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+    @media (max-width: 640px){
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,27 @@
+@import "app/[locale]/styles/main";
+.paginationControls{
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 640px) {
+    button{
+      min-width: 2rem;
+    }
+  }
+}
+.btnList{
+  display: flex;
+  gap: 1rem;
+}
+.section{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.active{
+  background-color: $addon-blue;
+}
+.tab{
+  .paginationControls{
+    flex: 1;
+  }
+}

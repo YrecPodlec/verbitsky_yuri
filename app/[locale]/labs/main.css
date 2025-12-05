@@ -1,0 +1,132 @@
+@import "98.css";
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #101010;
+}
+@font-face {
+    font-family: 'Windows';
+    src: url('../../../public/fonts/W95FA.otf') format('opentype'),
+    url('../../../public/fonts/W95FA.otf') format('opentype');
+    font-weight: 400;
+}
+body{
+    font-family: 'Windows', serif;
+    letter-spacing: .125rem;
+}
+*{
+    font-family: Windows, sans-serif;
+    transition: all .3s ease-in-out;
+    scroll-behavior: smooth;
+    scroll-margin-top: 120px;
+}
+input, textarea{
+    font-family: Windows, sans-serif;
+    resize: none;
+}
+textarea{
+    height: 12rem;
+}
+button{
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: Windows, sans-serif;
+    @media(max-width: 600px) {
+        padding: .5rem .5rem;
+        font-size: .7rem;
+    }
+}
+h1{
+    font-size: 4rem;
+    margin: 0;
+    @media (max-width: 1025px) {
+        font-size: 3rem;
+    }
+    @media (max-width: 780px) {
+        font-size: 2rem;
+    }
+    @media (max-width: 640px) {
+        font-size: 1rem;
+    }
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.title-bar-text{
+    letter-spacing: .125rem;
+    @media(max-width: 640px) {
+        font-size: .7rem;
+        font-weight: normal;
+    }
+}
+.title-bar-controls{
+    @media(max-width: 640px) {
+        scale: .8;
+    }
+}
+.title-bar-white{
+    border-left: 4px solid #C0C0C0;    // базовая светлая рамка
+border-right: 4px solid #C0C0C0;    // базовая светлая рамка
+border-top: 0 solid #C0C0C0;    // базовая светлая рамка
+border-bottom: 0 solid #C0C0C0;    // базовая светлая рамка
+font-family: Windows, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    background: #000080;
+    .title-bar-text{
+        font-weight: normal;
+    }
+}
+.window-body-white {
+    margin: 0;
+    background-color: white;
+    border: 4px solid #C0C0C0;    // базовая светлая рамка
+padding: .5rem;
+    box-shadow:
+            -1px -1px 0px 0px rgba(255, 255, 255) inset,
+            1px  1px 0px 0px #808080 inset,
+            -2px -2px 0px 0px #C1C1C1 inset,
+            2px  2px 0px 0px black inset;
+    @media(max-width: 600px) {
+        border: 1px solid #C0C0C0;
+    }
+}
+.window-white{
+    color: black;
+    box-shadow:
+            1px 1px 0 0 white inset,
+            -2px  -2px 0px 0px #7F7F7F inset,
+            2px 2px 0px 0px #DFDFDF inset,
+            1px  1px 0px 0px black;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    @media(max-width: 640px) {
+        gap: 2rem;
+    }
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1000;
+    background-color: var(--background-color); /* fallback + тёмный фон под картинкой */
+    overflow: hidden;
+}
+
+.background__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* как в Next.js Image с fill + objectFit: 'cover' */
+    user-select: none;        /* чтобы не выделялось */
+    pointer-events: none;     /* чтобы не перехватывало клики */
+    /* Опционально: лёгкое затемнение или блюр для лучшей читаемости текста */
+    /* filter: brightness(0.8) blur(1px); */
+}

@@ -1,0 +1,45 @@
+@import "app/[locale]/styles/main";
+.section{
+  @include paddingMain;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  @media (max-width: 1025px) {
+    gap: 1rem;
+  }
+}
+.p{
+  margin: 0;
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+  @media (max-width: 640px) {
+    font-size: 1rem;
+  }
+}
+.content{
+
+}
+.windowsContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  gap: 4rem;
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+.image{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+}
+.boxInner {
+  transition: all 0.3s ease;
+
+  &:hover {
+    .window {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+    }
+  }
+}

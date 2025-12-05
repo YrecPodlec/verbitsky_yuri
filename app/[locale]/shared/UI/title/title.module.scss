@@ -1,5 +1,10 @@
+@import "app/[locale]/styles/main";
 .windowTitle{
   width: fit-content;
+  box-shadow:
+    4px 2px 0px 0px $windows-blue,
+    8px 4px 0px 0px rgb(255, 0, 102),
+    12px 6px 0px 0px $windows-blue;
 }
 .h1{
   padding: .5rem 4rem;

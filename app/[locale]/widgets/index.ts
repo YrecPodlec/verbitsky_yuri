@@ -3,8 +3,16 @@ import ModalWindow from "@/app/[locale]/widgets/modal/modalWindow";
 import Languages from "@/app/[locale]/widgets/languages/languages";
 import Welcome from "@/app/[locale]/widgets/welcome/welcome";
 import WaveBlock from "@/app/[locale]/widgets/waveBlock/waveBlock";
+import Projects from "@/app/[locale]/widgets/projects/projects";
+import Skills from "@/app/[locale]/widgets/skills/skills";
+import Contacts from "@/app/[locale]/widgets/contacts/contacts";
+import Footer from "@/app/[locale]/widgets/footer/footer";
 export {Navbar as Navbar}
 export {ModalWindow as ModalWindow}
 export {Languages as Languages}
 export {Welcome as Welcome}
 export {WaveBlock as WaveBlock}
+export {Projects as Projects}
+export {Skills as Skills}
+export {Contacts as Contacts}
+export {Footer as Footer}

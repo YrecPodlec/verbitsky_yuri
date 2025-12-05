@@ -1,6 +1,6 @@
 @mixin paddingMain{
   padding: .5rem 7.5rem;
-  @media (max-width: 1025px) {
+  @media (max-width: 1025px) or (max-height: 850px) {
       padding: .5rem 4rem;
   }
   @media (max-width: 600px) {

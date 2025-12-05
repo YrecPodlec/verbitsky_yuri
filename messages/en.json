@@ -22,6 +22,36 @@
     "ai": "AI",
     "fuls": "FULLSTACK"
   },
+  "contacts": {
+    "title": "CONTACTS",
+    "form": {
+      "name": "YOUR NAME",
+      "email": "EMAIL",
+      "message": "YOUR MESSAGE",
+      "submit": "SEND"
+    },
+    "errors": {
+      "name": "Name must be 10–50 letters only",
+      "email": "Please enter a valid email",
+      "message": "Message must be at least 10 characters"
+    },
+    "alternative": "Fill out the form, or...",
+    "social": "Find me in social media, click the links below",
+    "modal": {
+      "title": "ERROR",
+      "message": "Please fill out all fields correctly before sending.",
+      "ok": "OK"
+    },
+    "success": "Form sent successfully!"
+  },
+  "textAdd": {
+    "text": "For me, every project is not just a set of code, but a story about how an idea turns into a working product. I try to have logic behind the interfaces, and user—friendliness behind the logic."
+  },
   "aboutText": {
-    "first": "Four years ago, I tried my hand at web development for the first time at university. Honestly, at that time I thought I would go to game dev, but the code for websites suddenly tightened", "second": "Since then, I've been expanding my horizons: from the first simple pages,\n I've moved on to a full-fledged workbench, trying different technologies and approaches to\n creating interfaces.", "third": "I'm currently studying at my second university, testing new techniques and frameworks, \n and constantly looking for fresh ways to make the web faster, more convenient, and more beautiful"}
+    "first": "Four years ago, I tried my hand at web development for the first time at university. Honestly, at that time I thought I would go to game dev, but the code for websites suddenly tightened", "second": "Since then, I've been expanding my horizons: from the first simple pages,\n I've moved on to a full-fledged workbench, trying different technologies and approaches to\n creating interfaces.", "third": "I'm currently studying at my second university, testing new techniques and frameworks, \n and constantly looking for fresh ways to make the web faster, more convenient, and more beautiful"
+  },
+  "tabs": {
+    "languages": "These languages became the basis of my stack. I use them to create interfaces, write logic, and try different approaches to development. \n\n I prefer to type the data directly, which makes the application better and minimizes the risk of errors.",
+    "frontend": "I build the user-facing part of applications, creating interfaces that are both functional and visually appealing.\n\n I enjoy working with components, managing state, and experimenting with different frameworks to improve user experience. Writing clean, typed code helps me prevent errors and keep projects maintainable."
+  }
 }

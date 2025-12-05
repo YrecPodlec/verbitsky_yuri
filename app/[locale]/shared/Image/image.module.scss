@@ -1,0 +1,9 @@
+.image {
+  position: relative;
+  width: 85%;
+  aspect-ratio: 2 / 1;
+
+  img {
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,20 @@
+.logo {
+    width: fit-content;
+    cursor: pointer;
+}
+
+.logo .window-body-white {
+    padding: 0.5rem 2rem;
+    margin: 0;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: black;
+}
+
+@media (max-width: 600px) {
+    .logo .window-body-white { padding:  fine 0.5rem 1rem; }
+    .logo p { font-size: 1rem; }
+}

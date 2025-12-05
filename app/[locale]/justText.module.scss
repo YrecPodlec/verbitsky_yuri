@@ -1,0 +1,12 @@
+@import "styles/main";
+.justText{
+  background-color: $windows-blue;
+  padding: 2rem 7.5rem;
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+  @media (max-width: 640px){
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}

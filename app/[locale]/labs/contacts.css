@@ -1,0 +1,177 @@
+@import url('https://unpkg.com/98.css');
+
+.contact-section {
+    padding: 6rem 7.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.content2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 640px) {
+    .contact-section { padding: 4rem 1rem; }
+    .content2 { grid-template-columns: 1fr; }
+}
+
+.blockInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+}
+
+.blockInputs label {
+    color: white;
+    font-size: 1rem;
+}
+
+.blockInputs input,
+.blockInputs textarea {
+    padding: 1rem;
+    font-size: 1rem;
+    letter-spacing: .25rem;
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .blockInputs { width: 100%; }
+}
+
+.btn {
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+}
+
+.btn button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.blockText {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    color: white;
+}
+
+.blockText p {
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+@media (max-width: 840px) {
+    .blockText {
+        padding: 0 1rem 1rem;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+    .blockText p { font-size: 1.2rem; }
+}
+
+.linksList {
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+}
+
+.linksList button {
+    border-radius: 50%;
+    padding: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: grid;
+    place-items: center;
+}
+
+.mediaBtn {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+}
+
+.mediaBtn img {
+    object-fit: contain;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 2rem;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 840px) {
+    .links {
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    .linksList { justify-content: center; }
+}
+
+/* === Ошибки валидации === */
+.inputBox.error {
+    background-color: rgba(255, 0, 0, 0.05);
+}
+
+.inputBox.error > label {
+    color: red;
+}
+
+.errorText {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+    min-height: 1.2em;
+}
+
+.error-modal {
+    position: fixed;
+    background: rgba(16, 16, 16, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+}
+
+.error-modal.active {
+    display: flex;
+}
+
+.windows {
+    transform: scale(0);
+    transition: transform 0.25s ease;
+}
+
+.error-modal.active .windows {
+    transform: scale(1);
+}
+
+.windBody {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.windBody button {
+    min-width: 80px;
+}

@@ -1,0 +1,135 @@
+/* ---------- Section ---------- */
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 8rem 7.5rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1025px) {
+    .skills-section {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .skills-section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* ---------- Tabs ---------- */
+.tabs-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ---------- Tab Panels ---------- */
+.tabs-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.tab-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    color: white;
+}
+
+.tab-panel h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+@media (max-width: 640px) {
+    .tab-panel {
+        gap: 1rem;
+    }
+    .tab-panel h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ---------- Skill List ---------- */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+@media (max-width: 640px) {
+    .skill-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.image-box {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 4rem;
+}
+
+@media (max-width: 640px) {
+    .image-box {
+        font-size: 2rem;
+        gap: 1rem;
+    }
+}
+
+.skill-photo {
+    position: relative;
+    width: 4rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: white;
+}
+
+@media (max-width: 640px) {
+    .skill-photo {
+        width: 2rem;
+    }
+}
+
+.skill-text {
+    font-size: 1rem;
+}
+
+.content-bar {
+    width: 25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 640px) {
+    .content-bar {
+        width: 100%;
+        height: 1.5rem;
+    }
+}
+
+.progress-indicator-bar {
+    display: block;
+    height: 1rem;
+    background-color: #0088FF;
+    border-radius: 0.5rem;
+}
+
+/* ---------- Window inside tab ---------- */
+.into-window {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
