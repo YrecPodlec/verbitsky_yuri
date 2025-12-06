@@ -1,5 +1,6 @@
-@import "app/[locale]/styles/main";
-
+@use "../../styles/_mixin.scss" as *;
+@use "../../styles/_colors.scss" as *;
+@use "../../styles/_fonts.scss" as *;
 .header {
   position: fixed;
   background-color: $windows-blue;

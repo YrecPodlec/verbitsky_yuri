@@ -1,4 +1,5 @@
 @use "../../styles/main";
+@use "../../styles/_colors.scss" as *;
 .active{
   background-color: $addon-blue;
 }

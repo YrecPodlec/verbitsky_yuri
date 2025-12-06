@@ -1,4 +1,6 @@
 @use "../../../styles/main";
+
+@use "../../../styles/_colors.scss" as *;
 .windowTitle{
   width: fit-content;
   box-shadow:

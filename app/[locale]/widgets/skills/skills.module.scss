@@ -1,4 +1,6 @@
-@use "../../styles/main";
+@use "../../styles/_mixin.scss" as *;
+@use "../../styles/_colors.scss" as *;
+@use "../../styles/_fonts.scss" as *;
 .section{
   display: flex;
   flex-direction: column;

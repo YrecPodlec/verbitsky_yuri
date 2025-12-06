@@ -1,4 +1,6 @@
 @use "../../styles/main";
+
+@use "../../styles/_mixin.scss" as *;
 .section{
   @include paddingMain;
   display: flex;

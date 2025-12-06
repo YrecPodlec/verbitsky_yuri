@@ -1,4 +1,6 @@
 @use "styles/main";
+
+@use "styles/_colors.scss" as *;
 .justText{
   background-color: $windows-blue;
   padding: 2rem 7.5rem;
