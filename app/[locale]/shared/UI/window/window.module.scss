@@ -1,4 +1,4 @@
-@import "app/[locale]/styles/main";
+@use "app/[locale]/styles/main";
 .contentWindow {
   height: fit-content;
   box-shadow:

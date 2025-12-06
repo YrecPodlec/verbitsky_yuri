@@ -1,4 +1,4 @@
-@import "styles/main";
+@use "styles/main" as *;
 @import "98.css";
 body{
   margin: 0;

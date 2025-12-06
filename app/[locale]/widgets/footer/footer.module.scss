@@ -1,4 +1,4 @@
-@import "app/[locale]/styles/main";
+@use "app/[locale]/styles/main";
 .footer{
   width: 100%;
   background-image: url("/footer.svg");

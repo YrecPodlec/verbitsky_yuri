@@ -1,4 +1,4 @@
-@import "app/[locale]/styles/main";
+@use "app/[locale]/styles/main";
 .section{
   display: flex;
   flex-direction: column;
