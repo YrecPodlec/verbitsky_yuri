@@ -3,7 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './image.module.scss'
 
-import { motion } from "motion/react";
 interface Props {
     src: string;
     alt: string;
