@@ -22,7 +22,7 @@ const Contacts = () => {
     const emailRegex3 = /^[a-zA-Z0-9._%+-]+@/;
     const emailRegex4 = /@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
     const emailRegex5 = /^[^\s]+$/;
-    const emailRegex6 = /^[^"(),:;<>@\[\]\\]+@[^\s@]+$/;
+    const emailRegex6 = /^[^"(),:;<>@\[\]\\]+@[\S@]+$/;
     const emailRegex7 = /^.+@.+\..+$/;
 
     const isEmailValid = (email: string) => {
