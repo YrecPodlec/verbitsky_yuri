@@ -12,7 +12,6 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-// Анимация для одной карточки
 const AnimatedProjectCard = ({ project, index }: { project: any; index: number }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, margin: "-100px" });

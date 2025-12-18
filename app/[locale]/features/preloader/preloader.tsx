@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image"; // ← добавили импорт
 import styles from "./preloader.module.scss";
 
 export default function Win98Preloader() {
@@ -27,9 +28,13 @@ export default function Win98Preloader() {
     return (
         <div className={styles.preloader}>
             <div className={styles.logo}>
-                <img
+                <Image
                     src="https://win98icons.alexmeub.com/icons/png/windows-0.png"
                     alt="Windows 98"
+                    width={48}
+                    height={48}
+                    priority={true}
+                    unoptimized={true}
                 />
             </div>
 
