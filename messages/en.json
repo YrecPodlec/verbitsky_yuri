@@ -32,7 +32,7 @@
     },
     "errors": {
       "name": "Name must be 10–50 letters only",
-      "email": "Please enter a valid email",
+      "email": "Valid email: YourMail @ gmail.com or another domen",
       "message": "Message must be at least 10 characters"
     },
     "alternative": "Fill out the form, or...",

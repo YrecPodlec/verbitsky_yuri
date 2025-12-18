@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import styles from './pagination.module.scss';
 
 interface PaginationProps<T> {
-    data: T[];                    // массив любых объектов (проекты, посты и т.д.)
-    itemsPerPage: number;         // сколько элементов на одной странице (2, 3, 5, 10…)
-    renderItems: (items: T[]) => React.ReactNode;  // как отрисовывать текущую страницу
+    data: T[];
+    itemsPerPage: number;
+    renderItems: (items: T[]) => React.ReactNode;
 }
 
 function Pagination<T>({ data, itemsPerPage, renderItems }: PaginationProps<T>) {
@@ -25,15 +25,12 @@ function Pagination<T>({ data, itemsPerPage, renderItems }: PaginationProps<T>) 
 
     return (
         <section className={styles.section}>
-            {/* === ОТРИСОВКА ТЕКУЩЕЙ СТРАНИЦЫ === */}
             <div className={styles.pageContent}>
                 {renderItems(currentItems)}
             </div>
 
-            {/* === ПАГИНАЦИЯ === */}
             {totalPages > 1 && (
                 <div className={styles.paginationControls}>
-                    {/* Стрелка влево */}
                     <button
                         onClick={() => goToPage(currentPage - 1)}
                         disabled={currentPage === 1}
@@ -43,7 +40,6 @@ function Pagination<T>({ data, itemsPerPage, renderItems }: PaginationProps<T>) 
                     </button>
 
                     <div className={styles.btnList}>
-                        {/* Нумерованные кнопки */}
                         {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                             <button
                                 key={page}
@@ -54,8 +50,6 @@ function Pagination<T>({ data, itemsPerPage, renderItems }: PaginationProps<T>) 
                             </button>
                         ))}
                     </div>
-
-                    {/* Стрелка вправо */}
                     <button
                         onClick={() => goToPage(currentPage + 1)}
                         disabled={currentPage === totalPages}

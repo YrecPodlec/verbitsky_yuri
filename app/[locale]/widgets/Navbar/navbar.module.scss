@@ -26,14 +26,12 @@
   z-index: 1000;
 }
 
-// === ЧЕКБОКС ===
 .burgerInput {
   display: none; // скрываем
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
-// === ИКОНКА ===
 .burgerLabel {
   display: none;
   cursor: pointer;
@@ -52,7 +50,6 @@
   transition: all 0.3s ease;
   display: block;
 
-  // Полоски
   &::before,
   &::after {
     content: '';
@@ -66,7 +63,7 @@
   }
 
   &::before {
-    top: -0.6rem; // расстояние между полосками
+    top: -0.6rem;
   }
 
   &::after {
@@ -74,22 +71,20 @@
   }
 }
 
-// === АНИМАЦИЯ → КРЕСТИК ===
 .burgerInput:checked + .burgerLabel .burgerIcon {
-  background: transparent; // средняя полоска исчезает
+  background: transparent;
 
   &::before {
     transform: rotate(45deg);
-    top: 0; // поднимаем на место средней
+    top: 0;
   }
 
   &::after {
     transform: rotate(-45deg);
-    top: 0; // опускаем на место средней
+    top: 0;
   }
 }
 
-// === НАВИГАЦИЯ ===
 .nav {
   display: flex;
   gap: 2rem;
@@ -111,7 +106,6 @@
   }
 }
 
-// ОТКРЫТОЕ МЕНЮ
 .burgerInput:checked ~ .nav {
   @media (max-width: 930px) {
     left: 0;
