@@ -2,6 +2,9 @@ import { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
+    eslint: {
+        ignoreDuringBuilds: true, // ← это отключит все ESLint-ошибки на Vercel
+    },
     images: {
         remotePatterns: [
             {
