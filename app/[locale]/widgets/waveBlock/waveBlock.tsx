@@ -11,9 +11,9 @@ const WaveBlock = () => {
 
     return (
         <motion.section className={styles.section} id="about"
-                        initial={{ opacity: 0, y: 80 }}
+                        initial={{ opacity: 1, y: 0 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -40 }}
+                        exit={{ opacity: 1, y: 0 }}
                         viewport={{
                             once: false,
                             amount: 0.2,

@@ -18,7 +18,7 @@ const Circle = ({ content }: { content: string }) => {
     return (
         <motion.div
             ref={ref}
-            initial={{ scale: 0, opacity: 0 }}
+            initial={{ scale: 1, opacity: 1 }}
             animate={isInView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.7, ease: "backOut" }}
             className={styles.circle}
@@ -55,7 +55,7 @@ const Welcome = () => {
 
                     <motion.div
                         ref={leftBtnsRef}
-                        initial={{ x: -200, opacity: 0 }}
+                        initial={{ x: 0, opacity: 1 }}
                         animate={isLeftInView ? { x: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.8, delay: 0.9 }}
                         className={styles.btnsWithText}
@@ -82,7 +82,7 @@ const Welcome = () => {
 
                     <motion.div
                         ref={photoRef}
-                        initial={{opacity: 0}}
+                        initial={{opacity: 1}}
                         animate={isPhotoInView ? {opacity: 1} : {}}
                         transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
                         className={styles.photo}
@@ -97,7 +97,7 @@ const Welcome = () => {
 
                     <motion.div
                         ref={rightBtnsRef}
-                        initial={{ x: 200, opacity: 0 }}
+                        initial={{ x: 0, opacity: 1 }}
                         animate={isRightInView ? { x: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.8, delay: 0.9 }}
                         className={styles.btnsWithText}
@@ -146,7 +146,7 @@ const Welcome = () => {
                 <div className={styles.contacts}>
                     <motion.div
                         ref={windowRef}
-                        initial={{ scale: 0.5, opacity: 0, x: -400 }}
+                        initial={{ scale: 1, opacity: 1, x: 0 }}
                         animate={isWindowInView ? { scale: 1, opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.5, ease: "backOut",}}
                         className={`${styles.contentWindow} window window-white`}
@@ -185,7 +185,7 @@ const Welcome = () => {
 
                     <motion.div
                         ref={linksRef}
-                        initial={{ x: 400, opacity: 0 }}
+                        initial={{ x: 0, opacity: 1 }}
                         animate={isLinksInView ? { x: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.5 }}
                         className={styles.links}

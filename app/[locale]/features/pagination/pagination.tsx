@@ -16,7 +16,6 @@ function Pagination<T>({ data, itemsPerPage, renderItems }: PaginationProps<T>) 
     const endIndex = startIndex + itemsPerPage;
     const currentItems = data.slice(startIndex, endIndex);
 
-    // Переход на конкретную страницу
     const goToPage = (page: number) => {
         if (page >= 1 && page <= totalPages) {
             setCurrentPage(page);
