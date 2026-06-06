@@ -10,13 +10,28 @@ export const dataProjects = [
         href: "https://www.verbitsky-art.com/ru"
     },
     {
-        title: "Secret App 1",
-        photo: "/secret.png",
-        href: "/"
+        title: "FastAPI OpenCV Project",
+        photo: "/project3.png",
+        href: "https://image-kosyga.vercel.app/"
     },
     {
-        title: "Secret App 2",
-        photo: "/secret.png",
-        href: "/"
-    }
+        title: "Montage Portfolio",
+        photo: "/project4.png",
+        href: "https://portfolio-skipper.vercel.app/"
+    },
+    {
+        title: "Product Designer Portfolio",
+        photo: "/project5.png",
+        href: "https://sofiana.vercel.app/"
+    },
+    {
+        title: `Photo Studio ${"HAPPY"}`,
+        photo: "/project6.png",
+        href: "https://happy-studio-verbitsky.vercel.app/"
+    },
+    {
+        title: `Woman clothe shop ${"HOT LOOK"}`,
+        photo: "/project7.png",
+        href: "https://hot-look-client.vercel.app/"
+    },
 ]
