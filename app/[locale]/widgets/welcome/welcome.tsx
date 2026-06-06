@@ -20,7 +20,7 @@ const Circle = ({ content }: { content: string }) => {
             ref={ref}
             initial={{ scale: 1, opacity: 1 }}
             animate={isInView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.5, ease: "backOut" }}
+            transition={{ duration: 0.6, ease: "backOut" }}
             className={styles.circle}
         >
             {content}
